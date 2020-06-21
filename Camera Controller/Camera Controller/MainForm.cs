@@ -371,6 +371,11 @@ namespace CameraController
 
 		private void UpdateCoordinates()
 		{
+			if (!this.IsGameFocussed())
+			{
+				return;
+			}
+
 			// rotation
 			float rotStep = this.rotationSpeed * deltaTime / 5000f;
 

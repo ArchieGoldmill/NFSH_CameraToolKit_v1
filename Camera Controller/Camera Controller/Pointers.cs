@@ -24,7 +24,7 @@ namespace CameraController
 
 		public static int[] Main =
 		{
-			0x4a87d90,
+			0x04AED190,
 			0x98,
 			0xF8,
 			0x50,
@@ -32,7 +32,7 @@ namespace CameraController
 
 		public static int[] FovPtr =
 {
-			0x0479D3B8,
+			0x047FF898,
 			0x0,
 			0x1168
 		};
@@ -45,17 +45,17 @@ namespace CameraController
 
 		public static int[] Rotation;
 
-		public static long CamCodeCave = 0x14D535817;
+		public static long CamCodeCave = 0x14DBC2737;
 
-		public static long FovCodePtr = 0x1486D6C53;
+		public static long FovCodePtr = 0x149A5DF23;
 
-		public static long LOD = 0x14D17335E;
+		public static long LOD = 0x14D88734C;
 
-		public static long AllPartsOptional = 0x141BB4EA5;
+		public static long AllPartsOptional = 0x141D4BCC1;
 
-		public static long VinylsPtr = 0x141D53A84;
+		public static long VinylsPtr = 0x141C0E974;
 
-		public static long NoPartRestrictions1 = 0x141E59347;
-		public static long NoPartRestrictions2 = 0x141E58FF3;
+		public static long NoPartRestrictions1 = 0x141EADE93;
+		public static long NoPartRestrictions2 = 0x141EAE1E7;
 	}
 }
