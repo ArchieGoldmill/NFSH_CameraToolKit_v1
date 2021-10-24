@@ -31,6 +31,11 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.noPartRestrict = new System.Windows.Forms.CheckBox();
+			this.vinylFix = new System.Windows.Forms.CheckBox();
+			this.allPartsOptional = new System.Windows.Forms.CheckBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
 			this.resetBtn = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
 			this.RotationSpeed = new System.Windows.Forms.NumericUpDown();
@@ -55,11 +60,6 @@
 			this.dataGridView = new System.Windows.Forms.DataGridView();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.allPartsOptional = new System.Windows.Forms.CheckBox();
-			this.vinylFix = new System.Windows.Forms.CheckBox();
-			this.noPartRestrict = new System.Windows.Forms.CheckBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.RotationSpeed)).BeginInit();
@@ -101,6 +101,63 @@
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Main";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// noPartRestrict
+			// 
+			this.noPartRestrict.AutoSize = true;
+			this.noPartRestrict.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.noPartRestrict.Location = new System.Drawing.Point(203, 145);
+			this.noPartRestrict.Name = "noPartRestrict";
+			this.noPartRestrict.Size = new System.Drawing.Size(114, 17);
+			this.noPartRestrict.TabIndex = 14;
+			this.noPartRestrict.Text = "No part restrictions";
+			this.noPartRestrict.UseVisualStyleBackColor = true;
+			this.noPartRestrict.Visible = false;
+			this.noPartRestrict.CheckedChanged += new System.EventHandler(this.NoPartRestrict_CheckedChanged);
+			// 
+			// vinylFix
+			// 
+			this.vinylFix.AutoSize = true;
+			this.vinylFix.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.vinylFix.Location = new System.Drawing.Point(172, 175);
+			this.vinylFix.Name = "vinylFix";
+			this.vinylFix.Size = new System.Drawing.Size(145, 17);
+			this.vinylFix.TabIndex = 13;
+			this.vinylFix.Text = "No vinyl scale restrictions";
+			this.vinylFix.UseVisualStyleBackColor = true;
+			this.vinylFix.Visible = false;
+			this.vinylFix.CheckedChanged += new System.EventHandler(this.VinylFix_CheckedChanged);
+			// 
+			// allPartsOptional
+			// 
+			this.allPartsOptional.AutoSize = true;
+			this.allPartsOptional.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.allPartsOptional.Location = new System.Drawing.Point(214, 119);
+			this.allPartsOptional.Name = "allPartsOptional";
+			this.allPartsOptional.Size = new System.Drawing.Size(103, 17);
+			this.allPartsOptional.TabIndex = 12;
+			this.allPartsOptional.Text = "All parts optional";
+			this.allPartsOptional.UseVisualStyleBackColor = true;
+			this.allPartsOptional.Visible = false;
+			this.allPartsOptional.CheckedChanged += new System.EventHandler(this.AllPartsOptional_CheckedChanged);
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(509, 281);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(80, 13);
+			this.label8.TabIndex = 11;
+			this.label8.Text = "made by Archie";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(509, 255);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(191, 13);
+			this.label7.TabIndex = 10;
+			this.label7.Text = "Need for Speed: Heat - Camera Toolkit";
 			// 
 			// resetBtn
 			// 
@@ -373,60 +430,6 @@
 			this.statusLabel.Name = "statusLabel";
 			this.statusLabel.Size = new System.Drawing.Size(52, 17);
 			this.statusLabel.Text = "Disabled";
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(509, 281);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(80, 13);
-			this.label8.TabIndex = 11;
-			this.label8.Text = "made by Archie";
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(509, 255);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(191, 13);
-			this.label7.TabIndex = 10;
-			this.label7.Text = "Need for Speed: Heat - Camera Toolkit";
-			// 
-			// allPartsOptional
-			// 
-			this.allPartsOptional.AutoSize = true;
-			this.allPartsOptional.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.allPartsOptional.Location = new System.Drawing.Point(214, 119);
-			this.allPartsOptional.Name = "allPartsOptional";
-			this.allPartsOptional.Size = new System.Drawing.Size(103, 17);
-			this.allPartsOptional.TabIndex = 12;
-			this.allPartsOptional.Text = "All parts optional";
-			this.allPartsOptional.UseVisualStyleBackColor = true;
-			this.allPartsOptional.CheckedChanged += new System.EventHandler(this.AllPartsOptional_CheckedChanged);
-			// 
-			// vinylFix
-			// 
-			this.vinylFix.AutoSize = true;
-			this.vinylFix.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.vinylFix.Location = new System.Drawing.Point(172, 175);
-			this.vinylFix.Name = "vinylFix";
-			this.vinylFix.Size = new System.Drawing.Size(145, 17);
-			this.vinylFix.TabIndex = 13;
-			this.vinylFix.Text = "No vinyl scale restrictions";
-			this.vinylFix.UseVisualStyleBackColor = true;
-			this.vinylFix.CheckedChanged += new System.EventHandler(this.VinylFix_CheckedChanged);
-			// 
-			// noPartRestrict
-			// 
-			this.noPartRestrict.AutoSize = true;
-			this.noPartRestrict.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.noPartRestrict.Location = new System.Drawing.Point(203, 145);
-			this.noPartRestrict.Name = "noPartRestrict";
-			this.noPartRestrict.Size = new System.Drawing.Size(114, 17);
-			this.noPartRestrict.TabIndex = 14;
-			this.noPartRestrict.Text = "No part restrictions";
-			this.noPartRestrict.UseVisualStyleBackColor = true;
-			this.noPartRestrict.CheckedChanged += new System.EventHandler(this.NoPartRestrict_CheckedChanged);
 			// 
 			// MainForm
 			// 

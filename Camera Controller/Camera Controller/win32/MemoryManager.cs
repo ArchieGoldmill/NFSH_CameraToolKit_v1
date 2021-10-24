@@ -63,17 +63,17 @@ namespace CameraController
 		}
 
 
-		public void WriteFloatMultiLevel(int[] offsets, float data)
+		public void WriteFloatMultiLevel(long[] offsets, float data)
 		{
 			this.WriteFloat(this.GetAbsoluteAddress(offsets), data);
 		}
 
-		public float ReadFloatMultiLevel(int[] offsets)
+		public float ReadFloatMultiLevel(long[] offsets)
 		{
 			return this.ReadFloat(this.GetAbsoluteAddress(offsets));
 		}
 
-		public byte[] ReadBytesMultiLevel(int[] offsets, int count)
+		public byte[] ReadBytesMultiLevel(long[] offsets, int count)
 		{
 			return this.ReadBytes(this.GetAbsoluteAddress(offsets), count);
 		}
@@ -96,7 +96,7 @@ namespace CameraController
 			ExternalDllMethods.WriteProcessMemory(pHandle, pointer, data, data.Length, out outP);
 		}
 
-		public void WriteBytesMultiLevel(int[] offsets, byte[] data)
+		public void WriteBytesMultiLevel(long[] offsets, byte[] data)
 		{
 			this.WriteBytes(this.GetAbsoluteAddress(offsets), data);
 		}
@@ -178,16 +178,16 @@ namespace CameraController
 			throw new Exception("Process \"" + name + "\" not found!");
 		}
 
-		public IntPtr GetAbsoluteAddress(int[] offsets)
+		public IntPtr GetAbsoluteAddress(long[] offsets)
 		{
 			IntPtr cur = baseAdr;
 
 			for (int i = 0; i < offsets.Length - 1; i++)
 			{
-				cur = ReadPointer64(IntPtr.Add(cur, offsets[i]));
+				cur = ReadPointer64(new IntPtr(cur.ToInt64() + offsets[i]));
 			}
 
-			cur = IntPtr.Add(cur, offsets[offsets.Length - 1]);
+			cur = new IntPtr(cur.ToInt64() + offsets[offsets.Length - 1]);
 
 			return cur;
 		}
